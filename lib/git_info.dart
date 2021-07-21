@@ -18,10 +18,17 @@ class GitInformation {
 class GitInfo {
   /// Get the [GitInformation] for the local git repository
   static Future<GitInformation> get() async {
-    final _head = await rootBundle.loadString('.git/HEAD');
-    final hash = await rootBundle.loadString('.git/ORIG_HEAD');
+    final head = await rootBundle.loadString('.git/HEAD');
+    // Trim the ref since it has a newline character apparently
+    final ref = head.replaceAll('ref: ', '').trim();
 
-    final branch = _head.split('/').last;
+    final refSplit = ref.split('/');
+    final branch = refSplit
+        // Skip the first two since those are folder names
+        .skip(2)
+        .reduce((value, element) => value += '/$element');
+
+    final hash = await rootBundle.loadString('.git/$ref');
 
     return GitInformation(branch: branch, hash: hash);
   }
