@@ -26,5 +26,3 @@ flutter:
    - .git/refs/heads/
    - .git/refs/heads/feature/
    # Include any other branch paths used in your project
-   - .git/refs/tags/
-   # Include any other tag paths used in your project
