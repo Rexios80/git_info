@@ -23,12 +23,22 @@ class GitInfo {
     final ref = head.replaceAll('ref: ', '').trim();
 
     final refSplit = ref.split('/');
-    final branch = refSplit
-        // Skip the first two since those are folder names
-        .skip(2)
-        .reduce((value, element) => value += '/$element');
 
-    final hash = await rootBundle.loadString('.git/$ref');
+    final branch;
+    final hash;
+    if (refSplit.length > 1) {
+      // This is a branch reference
+      branch = refSplit
+          // Skip the first two since those are folder names
+          .skip(2)
+          .reduce((value, element) => value += '/$element');
+
+      hash = await rootBundle.loadString('.git/$ref');
+    } else {
+      // This is a git hash
+      branch = ref;
+      hash = ref;
+    }
 
     return GitInformation(branch: branch, hash: hash);
   }
