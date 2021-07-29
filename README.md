@@ -14,3 +14,11 @@ assets:
 ```
 
 Unfortunately Flutter does not allow wild card asset definitions so you must specify all branch paths that could be used by your project
+
+settings.gradle:
+```
+import org.apache.tools.ant.DirectoryScanner
+
+DirectoryScanner.removeDefaultExclude('**/.git')
+DirectoryScanner.removeDefaultExclude('**/.git/**')
+```
