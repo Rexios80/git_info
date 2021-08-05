@@ -1,3 +1,6 @@
+## 1.1.0
+Handle error when branch path is not in assets
+
 ## 1.0.2
 Updated documentation for analysis options
 

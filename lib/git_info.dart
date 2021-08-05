@@ -7,8 +7,8 @@ class GitInformation {
   /// The current checked out branch
   final String branch;
 
-  /// The current git hash
-  final String hash;
+  /// The current commit hash
+  final String? hash;
 
   /// Construct a [GitInformation] from a [branch] and [hash]
   GitInformation({required this.branch, required this.hash});
@@ -25,7 +25,7 @@ class GitInfo {
     final refSplit = ref.split('/');
 
     final branch;
-    final hash;
+    String? hash;
     if (refSplit.length > 1) {
       // This is a branch reference
       branch = refSplit
@@ -33,9 +33,13 @@ class GitInfo {
           .skip(2)
           .reduce((value, element) => value += '/$element');
 
-      hash = await rootBundle.loadString('.git/$ref');
+      try {
+        hash = await rootBundle.loadString('.git/$ref');
+      } catch (error) {
+        print(error);
+      }
     } else {
-      // This is a git hash
+      // This is a commit hash
       branch = ref;
       hash = ref;
     }
