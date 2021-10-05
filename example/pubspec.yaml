@@ -22,7 +22,7 @@ flutter:
   uses-material-design: true
 
   assets:
-   - .git/HEAD
+   - .git/
    - .git/refs/heads/
    - .git/refs/heads/feature/
    # Include any other branch paths used in your project

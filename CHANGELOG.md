@@ -1,3 +1,6 @@
+## 1.1.1
+Updated assets in readme and example to prevent build issues
+
 ## 1.1.0
 Handle error when branch path is not in assets
 

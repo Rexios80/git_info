@@ -7,7 +7,7 @@ Reads information about the local git repository to show in app. Supports parsin
 pubspec.yaml:
 ```yaml
 assets:
-  - .git/HEAD
+  - .git/
   - .git/refs/heads/
   - .git/refs/heads/feature/
   # Include any other branch paths used in your project
