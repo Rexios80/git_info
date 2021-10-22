@@ -1,3 +1,6 @@
+## 1.2.0
+Added a static `gitFolderPath` field to support nested projects
+
 ## 1.1.1
 Updated assets in readme and example to prevent build issues
 

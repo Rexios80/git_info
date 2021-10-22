@@ -2,17 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:git_info/git_info.dart';
 
 void main() {
-  runApp(MyApp());
+  GitInfo.gitFolderPath = '../.git';
+
+  runApp(const MyApp());
 }
 
 // This will not work unless you create a git repo in the example folder
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('git_info_example'),
+          title: const Text('git_info_example'),
         ),
         body: FutureBuilder<GitInformation>(
           future: GitInfo.get(),
@@ -28,7 +32,7 @@ class MyApp extends StatelessWidget {
                 ),
               );
             } else {
-              return SizedBox.shrink();
+              return const SizedBox.shrink();
             }
           },
         ),

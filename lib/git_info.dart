@@ -16,15 +16,16 @@ class GitInformation {
 
 /// Class to hold the get method
 class GitInfo {
+  static var gitFolderPath = '.git';
+
   /// Get the [GitInformation] for the local git repository
   static Future<GitInformation> get() async {
-    final head = await rootBundle.loadString('.git/HEAD');
-    // Trim the ref since it has a newline character apparently
+    final head = await rootBundle.loadString('$gitFolderPath/HEAD');
+    // Trim the ref since it has a newline character
     final ref = head.replaceAll('ref: ', '').trim();
-
     final refSplit = ref.split('/');
 
-    final branch;
+    final String branch;
     String? hash;
     if (refSplit.length > 1) {
       // This is a branch reference
@@ -34,9 +35,9 @@ class GitInfo {
           .reduce((value, element) => value += '/$element');
 
       try {
-        hash = await rootBundle.loadString('.git/$ref');
+        hash = await rootBundle.loadString('$gitFolderPath/$ref');
       } catch (error) {
-        print(error);
+        // The file with the hash is not in the assets
       }
     } else {
       // This is a commit hash
