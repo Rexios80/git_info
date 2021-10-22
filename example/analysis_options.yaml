@@ -1,4 +1,5 @@
+include: package:flutter_lints/flutter.yaml
+
 analyzer:
   errors:
     asset_directory_does_not_exist: ignore
-    unrecognized_error_code: ignore

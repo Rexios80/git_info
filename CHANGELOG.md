@@ -1,3 +1,6 @@
+## 1.1.2
+Updated documentation and added analysis_options
+
 ## 1.1.1
 Updated assets in readme and example to prevent build issues
 

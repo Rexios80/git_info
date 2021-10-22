@@ -9,8 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-  cupertino_icons: ^1.0.2
+  flutter_lints: ^1.0.0
   git_info:
     path: ../
 
