@@ -9,7 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_lints: ^1.0.0
+
+  cupertino_icons: ^1.0.2
   git_info:
     path: ../
 
@@ -21,7 +22,7 @@ flutter:
   uses-material-design: true
 
   assets:
-   - ../.git/
-   - ../.git/refs/heads/
-   - ../.git/refs/heads/feature/
+   - .git/
+   - .git/refs/heads/
+   - .git/refs/heads/feature/
    # Include any other branch paths used in your project
