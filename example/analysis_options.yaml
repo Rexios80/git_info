@@ -1,4 +1,4 @@
-include: package:flutter_lints/flutter.yaml
+include: package:rexios_lints/flutter/core.yaml
 
 analyzer:
   errors:

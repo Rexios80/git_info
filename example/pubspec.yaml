@@ -1,6 +1,6 @@
 name: git_info_example
 description: Example for git_info
-publish_to: 'none'
+publish_to: none
 version: 1.0.0+1
 
 environment:
@@ -9,19 +9,21 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_lints: ^1.0.0
+
   git_info:
     path: ../
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  
+  rexios_lints: ^1.0.0
 
 flutter:
   uses-material-design: true
 
   assets:
-   - .git/
-   - .git/refs/heads/
-   - .git/refs/heads/feature/
-   # Include any other branch paths used in your project
+    - .git/
+    - .git/refs/heads/
+    - .git/refs/heads/feature/
+    # Include any other branch paths used in your project

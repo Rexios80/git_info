@@ -1,6 +1,6 @@
 name: git_info
 description: Reads information about the local git repository to show in app
-version: 1.1.2
+version: 1.2.0
 homepage: https://github.com/Rexios80/git_info
 
 environment:
@@ -14,4 +14,5 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^1.0.0
+  
+  rexios_lints: ^1.0.0
